@@ -26,6 +26,9 @@ while(true){
         case 2:
             frear(carro);
             break;
+        case 3:
+            subirMarcha(carro);
+            break;
         case 5:
             imprimeVeiculo(carro);
         break;
@@ -47,6 +50,13 @@ function frear(veiculo: Veiculo): void{
     if(veiculo.velocidade > 0){
         veiculo.velocidade -= veiculo.potencia*0.1;
         console.log(veiculo.velocidade);
+    }
+}
+
+function subirMarcha(veiculo: Veiculo): void {
+    if(veiculo.marchaAtual < veiculo.numeroMarchas && veiculo.velocidade > veiculo.marchaAtual * 10){
+        veiculo.marchaAtual++;
+        console.log(veiculo.marchaAtual);
     }
 }
 
