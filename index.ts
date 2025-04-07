@@ -26,6 +26,10 @@ while(true){
         case 2:
             frear(carro);
             break;
+        case 5:
+            imprimeVeiculo(carro);
+        break;
+        
         default:
             break;
     }
@@ -33,9 +37,9 @@ while(true){
 
 console.table(carro);
 
-function acelerar(veiculo: Veiculo): void{
-    if(veiculo.marchaAtual != 0){
-    veiculo.velocidade += veiculo.potencia*0.1;
+function acelerar(veiculo: Veiculo): void {
+  if (veiculo.marchaAtual != 0) {
+    veiculo.velocidade += veiculo.potencia * 0.1;
     console.log(veiculo.velocidade);
 }}
 
@@ -46,6 +50,11 @@ function frear(veiculo: Veiculo): void{
     }
 }
 
+
+function imprimeVeiculo(veiculo: Veiculo): void {
+  console.table(veiculo)
+}
+
 function criaVeiculo(): Veiculo{
     const veiculo: Veiculo = new Veiculo();
     veiculo.marca = teclado('Marca: ');
@@ -54,5 +63,3 @@ function criaVeiculo(): Veiculo{
     veiculo.numeroMarchas = +teclado('Número de marchas: ');
     return veiculo;
 }
-
-
